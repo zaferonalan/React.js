@@ -1,25 +1,14 @@
-import "bootstrap/dist/css/bootstrap.css";
-import "./App.css";
-import { Cards } from "./Components/Cards";
-import { Data } from "./Data";
+import Cards from "./Components/Cards";
+import Data from "./Data";
 
 function App() {
   return (
     <>
-      <div>
-        {Data.map((data) => {
-          return (
-            <div className="container">
-              <Cards
-                // image={data.image}
-                // title={data.title}
-                // description={data.description}
-                key={data.title}
-                data={data}
-              />
-            </div>
-          );
-        })}
+      <h1 className="text-3xl font-bold underline">Ürünlerimiz</h1>
+      <div className="container">
+        {Data.map((datas) => (
+          <Cards key={datas.title} data={datas} />
+        ))}
       </div>
     </>
   );

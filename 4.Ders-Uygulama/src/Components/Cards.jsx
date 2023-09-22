@@ -1,20 +1,22 @@
 import React from "react";
 
-export const Cards = ({ data }) => {
+const Card = ({ data }) => {
   const { image, title, description } = data;
-  console.log(data);
   return (
     <>
-      <div className="card" style="width: 18rem;">
-        <img src={image} className="card-img-top" />
-        <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text">{description}</p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
+      <div className="cards">
+        <div className="img">
+          <img src={image} alt="" />
+        </div>
+        <div className="content">
+          <h1>{title}</h1>
+          <p>{description}</p>
         </div>
       </div>
     </>
   );
 };
+
+export default Card;
+
+// kısa yol rafce
