@@ -1,5 +1,6 @@
 import Cards from "./Components/Cards";
 import Data from "./Data";
+import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ data }) => {
+const Cards = ({ data }) => {
   const { image, title, description } = data;
   return (
     <>
@@ -17,6 +17,6 @@ const Card = ({ data }) => {
   );
 };
 
-export default Card;
+export default Cards;
 
 // kısa yol rafce
