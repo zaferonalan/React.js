@@ -22,6 +22,7 @@ const ProductForm = (props) => {
     event.preventDefault();
 
     const newProductData = {
+      id: props.products.lenght + 1,
       productName,
       productPrice,
       imageUrl,
