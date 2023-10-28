@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const Card = (props) => {
   return (
     <div className={`bg-white p-5 rounded-lg ${props.className}`}>
