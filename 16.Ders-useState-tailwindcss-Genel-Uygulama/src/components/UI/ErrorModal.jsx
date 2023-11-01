@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Button from "./Button";
 import Card from "./Card";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
 const Backdrop = (props) => {
@@ -32,6 +32,24 @@ const ModalOverlay = (props) => {
 const ErrorModal = (props) => {
   const { onConfirm, error } = props;
   const { title, message } = error;
+  const cleanupRef = useRef();
+
+  useEffect(() => {
+    console.log("Modal oluşturuldu!");
+    return () => {
+      if (cleanupRef.current) {
+        console.log("Component kaldırıldı!");
+        props.setWorkers([]);
+      }
+    };
+  }, [cleanupRef, props]);
+
+  useEffect(() => {
+    return () => {
+      cleanupRef.current = true;
+    };
+  }, []);
+
   return (
     <React.Fragment>
       {ReactDOM.creactePortal(
