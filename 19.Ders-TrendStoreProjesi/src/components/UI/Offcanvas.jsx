@@ -1,13 +1,33 @@
 import { Fragment } from "react";
+import ReactDOM from "react-dom";
 import "./Offcanvas.css";
 
+const Backdrop = (props) => {
+  return <div className="backdrop" onClick={props.onClose}></div>;
+};
+
+const OffcanvasOverlay = (props) => {
+  return (
+    <div className="offcanvas">
+      <div className="content">{props.children}</div>
+    </div>
+  );
+};
+
 const Offcanvas = (props) => {
+  const portalElement = document.getElementById("overlays");
+
   return (
     <Fragment>
-      <div className="backdrop" onClick={props.onClose}></div>
-      <div className="offcanvas">
-        <div className="content">{props.children}</div>
-      </div>
+      {ReactDOM.createPortal(
+        <Backdrop onClose={props.onClose} />,
+        portalElement
+      )}
+
+      {ReactDOM.createPortal(
+        <OffcanvasOverlay children={props.children}></OffcanvasOverlay>,
+        portalElement
+      )}
     </Fragment>
   );
 };
