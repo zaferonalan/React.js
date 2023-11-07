@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const cartContext = {
-    item: [],
+    items: [],
     totalAmout: 0,
     addItem: () => {},
     removeItem: () => {},
