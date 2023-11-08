@@ -6,7 +6,9 @@ const CartProvider = ({ children }) => {
   const cartContext = {
     items: [],
     totalAmout: 0,
-    addItem: () => {},
+    addItem: () => {
+      console.log("Run");
+    },
     removeItem: () => {},
     clearItem: () => {},
   };
