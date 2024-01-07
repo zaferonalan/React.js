@@ -8,6 +8,8 @@ import WrongPath from "./components/WrongPath";
 import History from "./components/History";
 import Company from "./components/Company";
 import Team from "./components/Team";
+import Members from "./components/Members";
+import MembersDetail from "./components/MembersDetail";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="company" element={<Company />} />
             <Route path="team" element={<Team />} />
           </Route>
+          <Route path="/members" element={<Members />} />
+          <Route path="/members/:memberId" element={<MembersDetail />} />
           <Route path="/*" element={<WrongPath />} />
         </Routes>
       </div>
