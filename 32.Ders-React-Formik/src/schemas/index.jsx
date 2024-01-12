@@ -23,3 +23,15 @@ export const basicSchema = yup.object().shape({
     .oneOf([yup.ref("password")], "Şifreler eşleşmiyor")
     .required("Tekrar şifre girmek zorunludur"),
 });
+
+export const advancedSchema = yup.object().shape({
+  usurname: yup
+    .string()
+    .min(3, "Kullanıcı adı minimum 3 karakter olmalıdır.")
+    .required("Kullanıcı adı zorunludur."),
+  university: yup
+    .string()
+    .oneOf(["bogazici", "gsü", "odtü", "itü"], "Lütfen üniversitenizi")
+    .required("Üniversite seçmek zorunlu"),
+  isAccepted: yup.boolean().oneOf([true], "Kullanım koşullarını kabul ediniz"),
+});
