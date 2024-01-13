@@ -1,6 +1,6 @@
 import { useField } from "formik";
 
-function CustomInput({ label, ...props }) {
+function CustomSelect({ label, ...props }) {
   const [field, meta] = useField(props);
   console.log(field);
   console.log(meta);
@@ -8,7 +8,7 @@ function CustomInput({ label, ...props }) {
   return (
     <>
       <label>{label}</label>
-      <input
+      <select
         {...field}
         {...props}
         className={meta.error ? "input-error" : ""}
@@ -18,4 +18,4 @@ function CustomInput({ label, ...props }) {
   );
 }
 
-export default CustomInput;
+export default CustomSelect;
