@@ -1,10 +1,13 @@
 import "./App.css";
+import ContextExemple from "./components/ContextExemple";
 // import EventActions from "./components/EventActions";
 // import Home from "./components/Home";
 // import Instructor from "./components/Instructor";
 // import InstructorList from "./components/InstructorList";
 import LoginCheck from "./components/LoginCheck";
 import ReducerExemple from "./components/ReducerExemple";
+import RefExemple from "./components/RefExemple";
+import { ThemeContextProvider } from "./components/ThemeContext";
 // import Request from "./components/Request";
 
 function App() {
@@ -42,8 +45,12 @@ function App() {
         <InstructorList instructorNameLastnameList={instructorList} />
         <Request status="loading" />
         <EventActions /> */}
-        <LoginCheck/>
-        <ReducerExemple/>
+        <LoginCheck />
+        <ReducerExemple />
+        <ThemeContextProvider>
+          <ContextExemple />
+        </ThemeContextProvider>
+        <RefExemple />
       </div>
     </>
   );
