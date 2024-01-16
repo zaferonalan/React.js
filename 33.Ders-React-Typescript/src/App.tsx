@@ -4,6 +4,7 @@ import "./App.css";
 // import Instructor from "./components/Instructor";
 // import InstructorList from "./components/InstructorList";
 import LoginCheck from "./components/LoginCheck";
+import ReducerExemple from "./components/ReducerExemple";
 // import Request from "./components/Request";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Request status="loading" />
         <EventActions /> */}
         <LoginCheck/>
+        <ReducerExemple/>
       </div>
     </>
   );
