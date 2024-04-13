@@ -1,0 +1,22 @@
+.created-content{
+   display: flex;
+   justify-content: center;
+}
+.created-form{
+    border: 1px solid lightblue;
+    border-radius: 30px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 300px;
+}
+.form-texti{
+    border: none;
+}
+.todobtnDiv{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.todoBtn{
+    width: 150px;
+}
