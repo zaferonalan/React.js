@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  background-color: blue;
+  color: white;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+}
+.navDiv{
+  position: relative;
+}
+.itemsDiv{
+  background-color: white;
+  width: 20px;
+  color: black;
+  text-align: center;
+  border-radius: 50%;
+}
+.itemsIcon{
+  position: absolute;
+  right: 10px;
+}
