@@ -1,33 +1,35 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import CourseItem from './CourseItem'
+import { clearCart } from "../control/cartSlice";
 
 const CourseList = () => {
     const {cartItems, quantity, total} = useSelector((store)=> store.cart)
+    const dispatch = useDispatch()
 
   return (
     <>
         {quantity < 1 ? (
-            <section>
+            <section className='cart'>
                 <header>
                     <h2>Sepetim</h2>
                     <p>Bomboş</p>
                 </header>
             </section>
         ): (
-            <section>
+            <section className='cart' >
                 <h2>Sepetim</h2>
                 <div>
-                    {cartItems.map((item,id)=> {
-                        return <CourseItem key={id} {...item}/>
+                    {cartItems.map((item)=> {
+                        return <CourseItem key={item.id} {...item}/>
                     } )}
                 </div>
-                <footer>
+                <footer className='footer'>
                     <hr />
-                    <div>
+                    <div className='total-txt'>
                         <h4>Toplam Tutar: <span>{total} TL</span></h4>
                     </div>
-                    <button>Temizle</button>
+                    <button className='cartClearButton' onClick={ () => dispatch(clearCart()) } >Temizle</button>
                 </footer>
             </section>
         )}

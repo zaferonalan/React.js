@@ -26,3 +26,53 @@
   position: absolute;
   right: 10px;
 }
+
+/* !CourseList */
+.footer{
+  margin-top: 3rem;
+}
+.cart{
+  text-align: center;
+  margin-top: 2rem;
+}
+.total-txt{
+  margin: 1rem;
+}
+.cartClearButton{
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: blue;
+  color: white;
+}
+
+/* !CourseItem */
+.cartItem{
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 150px;
+}
+.cart-info{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.cartContent{
+  margin:1rem;
+}
+.cartQuantity{
+  margin-right: 3px;
+}
+.cartQuantityBtn{
+  border: none;
+  background-color: white;
+}
+.cartContentBtn{
+  margin: 1rem;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+}
