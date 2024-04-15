@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import courseItem from "../courseItem";
 
 const initialState = {
-    cartItems: [],
-    quantity: 0,
+    cartItems: courseItem,
+    quantity: 1,
     total: 0
 }
 
@@ -11,6 +12,6 @@ const cartSlice = createSlice({
     initialState
 })
 
-console.log(cartSlice)
+// console.log(cartSlice)
 
 export default cartSlice.reducer
