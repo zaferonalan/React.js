@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
-import { changeName } from "../store/control/formSlice"
+import { changeName, descriptionChange } from "../store/control/formSlice"
 
 const CourseForm = () => {
   const dispatch = useDispatch()
@@ -13,7 +13,7 @@ const CourseForm = () => {
 
   const handelSubmit = (e) => {
     e.preventDefault()
-    console.log(name)
+    console.log(name + description + cost)
   }
   return (
     <div className="courseForm panel">
@@ -26,7 +26,7 @@ const CourseForm = () => {
           </div>
           <div className="field">
             <label className="label">Açıklama</label>
-            <textarea className="input is-expanded" />
+            <textarea className="input is-expanded" value={description} onChange={(event) => {dispatch(descriptionChange(event.target.value))}} />
           </div>
           <div className="field">
             <label className="label">Fiyat</label>
