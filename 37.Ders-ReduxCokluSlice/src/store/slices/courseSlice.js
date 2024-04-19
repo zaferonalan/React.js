@@ -15,6 +15,10 @@ const courseSlice = createSlice({
                 id:nanoid()
             })
         },
+        changeSearchTerm(state, action){
+            state.searchTerm = action.payload
+        },
+
         removeCourse(state,action){
             const updatedCourses = state.data.filter((course) => {
                 return course.id !== action.payload
@@ -25,5 +29,5 @@ const courseSlice = createSlice({
     }
 })
 
-export const { addCourse, removeCourse } = courseSlice.actions
+export const { addCourse, removeCourse, changeSearchTerm } = courseSlice.actions
 export const courseReducer = courseSlice.reducer
