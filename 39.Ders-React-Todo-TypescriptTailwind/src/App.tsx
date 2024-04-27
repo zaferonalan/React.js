@@ -1,9 +1,18 @@
 import './App.css'
+import { FaPen, FaClipboardList } from "react-icons/fa";
+import TodoList from './components/TodoList';
 
 function App() {
   return (
     <div className="App">
-      <h1>Zafer</h1>
+      <div className="header">
+        <div className="logoside">
+          <FaPen/>
+          <h1>What To Do</h1>
+          <FaClipboardList/>
+        </div>
+      </div>
+      <TodoList/>
     </div>
   )
 }
