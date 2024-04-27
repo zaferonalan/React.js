@@ -5,11 +5,10 @@ function App() {
     <div className="App">
       <div className="header">
         <div className="logoside">
-        <FaPen/>
-        <h1>What To Do</h1>
-        <FaClipboardList />
+          <FaPen/>
+          <h1>What To Do</h1>
+          <FaClipboardList />
         </div>
-     
       </div>
       <TodoList />
     </div>
