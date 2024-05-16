@@ -1,6 +1,7 @@
 import { useFetchUsersQuery } from "../store"
 import { Skeleton } from "@mui/material";
 import UserItemList from "./UserItemList";
+import Button from '@mui/material/Button';
 
 const UserList = () => {
   const { isError, data, isFetching } = useFetchUsersQuery();
@@ -21,7 +22,13 @@ const UserList = () => {
   }
 
   return (
-    <div>{content}</div>
+    <div>
+      <div>
+        <h1>Kişiler</h1>
+        <Button variant="outlined">Kişi Ekle+</Button>
+      </div>  
+      {content}
+    </div>
   )
 }
 
