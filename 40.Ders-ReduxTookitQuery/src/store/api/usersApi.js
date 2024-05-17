@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { faker } from "@faker-js/faker";
 
 const pause = (duration) => {
     return new Promise((reseolve) => {
@@ -22,6 +23,7 @@ const usersApi = createApi({
             // ! Datayı Çekme işlemi
 
             fetchUsers: builder.query({
+                providesTags:['User'],
                 query:() => {
                     return{
                         url:'/users',
@@ -34,12 +36,16 @@ const usersApi = createApi({
             // ! Ekleme Aksiyonu
 
             addUsers: builder.mutation({
+                // ! Ekleme işlemi yaptığımda datayı providerTags'ta ki isimle yakalayıp yapılan değişiklik için datayı tekrar çekip yansıtma işelmini yapıyor.
+                invalidatesTags:() => {
+                    return[{type:'User'}]
+                },
                 query: () => {
                     return{
                         url: '/users',
                         method: 'POST',
                         body:{
-                            name: 'Can'
+                            name: faker.name.fullName()
                         }
                     }
                 }
@@ -48,6 +54,9 @@ const usersApi = createApi({
             // ! Silme aksiyonu
 
             removeUsers: builder.mutation({
+                invalidatesTags:() => {
+                    return[{type:'User'}]
+                },
                 query:(user) => {
                     return{
                         url: `/users/${user.id}`,

@@ -1,12 +1,12 @@
 {
-    "users":[
-        {
-            "id": 1,
-            "name": "Merve Önalan"
-        },
-        {
-            "id": 3,
-            "name": "Zafer Günay Önalan"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Merve Önalan"
+    },
+    {
+      "id": 3,
+      "name": "Zafer Günay Önalan"
+    }
+  ]
 }
