@@ -8,5 +8,12 @@
       "id": 3,
       "name": "Zafer Günay Önalan"
     }
+  ],
+  "albums": [
+    {
+      "userId": 3,
+      "title": "İzmir",
+      "id": 15
+    }
   ]
 }
