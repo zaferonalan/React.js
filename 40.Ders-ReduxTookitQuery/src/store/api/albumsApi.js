@@ -13,18 +13,19 @@ const albumsApi = createApi({
         baseUrl: 'http://localhost:3000',
         fetchFn: async(...args) => {
             await pause(1000)
-            return fetch(args)
+            return fetch(...args)
         }
     }),
     endpoints(builder){
         return{
             fetchAlbums: builder.query({
-                providesTags: (result, error, user) {
+                providesTags: (result, error, user) => {
+                    debugger;
                     const tags = result.map((album) => {
-                        return { type: 'Album', id: album.id }
+                        return { type: 'Album', id: album.id}
                     });
-                    tags.push({ type: 'UsersAlbum', id: user.id })
-                    return tags
+                    tags.push({ type: 'UsersAlbums', id: user.id })
+                    return tags;
                 },
                 query: (user) => {
                     return {
