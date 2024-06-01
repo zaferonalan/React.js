@@ -19,5 +19,12 @@
       "title": "İzmir",
       "id": 15
     }
+  ],
+  "photos": [
+    {
+      "albumId": 15,
+      "url": "https://loremflickr.com/150/150/abstract?lock=2903769698271232",
+      "id": 1
+    }
   ]
 }
